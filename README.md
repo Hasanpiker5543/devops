@@ -1,6 +1,6 @@
 ﻿# DevOps Django Bank
 
-[![CI/CD](https://github.com/Hasanpiker5543/devops/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/Hasanpiker5543/devops/actions/workflows/ci-cd.yml)
+[![CI/CD](https://github.com/El-Mehdi-Taoufik/devops/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/El-Mehdi-Taoufik/devops/actions/workflows/ci-cd.yml)
 
 Mini-projet DevOps basé sur une application de gestion bancaire avec login, client dashboard, admin dashboard, comptes, transferts et transactions.
 
@@ -42,5 +42,5 @@ python manage.py test
 ## Image Docker
 
 ```text
-ghcr.io/Hasanpiker5543/devops-django-bank:latest
+ghcr.io/el-mehdi-taoufik/devops-django-bank:latest
 ```
