@@ -4,7 +4,7 @@
 
 Mini-projet DevOps basé sur une application de gestion bancaire avec login, client dashboard, admin dashboard, comptes, transferts et transactions.
 
-## Auteur
+## Auteurs
 
 El-Mehdi Taoufik | Bilal Chbanat |Mohamed Reda Bouchaiba
 
