@@ -4,49 +4,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login | BankApp</title>
+    <title>Connexion | BankApp</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{% static 'banking/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'banking/css/style.css' %}?v=auth-premium-2" rel="stylesheet">
 </head>
 <body class="auth-page">
 
-<div class="card auth-card">
-    <div class="auth-header">
-        <h3>🏦 BankApp</h3>
-        <small>Connexion sécurisée</small>
-    </div>
+<main class="auth-shell">
+    <section class="auth-brand-panel" aria-label="BankApp">
+        <div class="auth-brand-mark">B</div>
+        <p class="auth-kicker">Private digital banking</p>
+        <h1>BankApp</h1>
+        <p class="auth-brand-copy">
+            Accédez à votre espace bancaire avec une expérience rapide, sécurisée et conçue pour gérer vos finances avec confiance.
+        </p>
 
-    <div class="card-body p-4">
-
-        {% if form.errors %}
-            <div class="alert alert-danger">
-                Nom d'utilisateur ou mot de passe incorrect ❌
+        <div class="auth-metrics" aria-label="Aperçu sécurité">
+            <div>
+                <span>24/7</span>
+                <small>Accès sécurisé</small>
             </div>
-        {% endif %}
+            <div>
+                <span>SSL</span>
+                <small>Session protégée</small>
+            </div>
+        </div>
+    </section>
 
-        <form method="post">
-            {% csrf_token %}
-
-            <div class="mb-3">
-                <label class="form-label">Nom d'utilisateur</label>
-                <input type="text" name="username" class="form-control" placeholder="Entrer votre username" required>
+    <section class="card auth-card">
+        <div class="auth-card-inner">
+            <div class="auth-header">
+                <span class="auth-pill">Connexion sécurisée</span>
+                <h2>Bienvenue</h2>
+                <p>Connectez-vous pour consulter vos comptes, soldes et transactions.</p>
             </div>
 
-            <div class="mb-4">
-                <label class="form-label">Mot de passe</label>
-                <input type="password" name="password" class="form-control" placeholder="••••••••" required>
-            </div>
+            {% if form.errors %}
+                <div class="alert alert-danger auth-alert">
+                    Nom d'utilisateur ou mot de passe incorrect.
+                </div>
+            {% endif %}
 
-            <button type="submit" class="btn btn-primary text-white w-100 py-2">
-                🔐 Se connecter
-            </button>
-            <p class="text-center mt-3 mb-0">
-                Vous n’avez pas de compte ?
-                <a href="{% url 'register' %}" class="fw-bold">Créer un compte</a>
+            <form method="post" class="auth-form">
+                {% csrf_token %}
+
+                <div class="auth-field">
+                    <label class="form-label" for="id_username">Nom d'utilisateur</label>
+                    <input type="text" name="username" id="id_username" class="form-control" placeholder="Votre identifiant" autocomplete="username" required>
+                </div>
+
+                <div class="auth-field">
+                    <label class="form-label" for="id_password">Mot de passe</label>
+                    <input type="password" name="password" id="id_password" class="form-control" placeholder="Votre mot de passe" autocomplete="current-password" required>
+                </div>
+
+                <div class="auth-options">
+                    <label class="auth-check">
+                        <input type="checkbox" name="remember_me">
+                        <span>Se souvenir de moi</span>
+                    </label>
+                    <span class="auth-secure-note">Session chiffrée</span>
+                </div>
+
+                <button type="submit" class="auth-submit btn btn-primary">
+                    Se connecter
+                </button>
+            </form>
+
+            <p class="auth-switch">
+                Vous n'avez pas de compte ?
+                <a href="{% url 'register' %}">Créer un compte</a>
             </p>
-        </form>
-    </div>
-</div>
+        </div>
+    </section>
+</main>
 
 </body>
 </html>
