@@ -26,6 +26,14 @@ python manage.py migrate
 python manage.py runserver
 ```
 
+## Compte admin local
+
+```text
+URL: http://127.0.0.1:8000/admin/
+Username: admin
+Password: admin12345
+```
+
 ## Docker
 
 ```powershell
